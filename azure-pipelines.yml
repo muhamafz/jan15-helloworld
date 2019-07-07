@@ -8,13 +8,20 @@
 
 trigger:
 - master
-
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'key1'
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
     Python27:
       python.version: '2.7'
+- task: Security static source code analysis@88
+  inputs:
+    preset: 'Checkmarx Default'
+    incScan: true
     Python35:
       python.version: '3.5'
     Python36:
