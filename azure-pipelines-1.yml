@@ -29,6 +29,7 @@ steps:
       
       echo 'Hello world'
       echo "Build.BuildId: is:       "$(Build.BuildId)
+      date
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
